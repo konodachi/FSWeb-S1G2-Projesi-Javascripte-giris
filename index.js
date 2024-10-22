@@ -20,6 +20,10 @@ Aşağıdakileri yap:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
+let surucuYasi = 18
+
+console.log(surucuYasi >= 18);
+
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)
 
@@ -32,6 +36,13 @@ Aşağıdakileri yap:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
+let birinciDeger = 10;
+let ikinciDeger = 15;
+
+birinciDeger > ikinciDeger ? "" : birinciDeger *= 2;
+
+console.log(birinciDeger);
+
 /*
 Görev 1c - String bir değeri Number'a dönüştürün (puanlamaya dahil değildir)
 
@@ -43,6 +54,10 @@ Aşağıdakileri yap:
    İPUCU: Number metoduna bakabilirsin
 */
 
+const str = "1999";
+
+console.log(Number(str));
+
 /*
 Görev 1d - Çarpma
  
@@ -52,8 +67,8 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamla:
    3. console.log(carpma(7,4)) ile yazdığın fonsiyonu test edin. Console'da sonucu 28 olarak görmelisin.
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function carpma(a, b) {
+  return a*b;
 }
 
 /* Görev 2 : Köpeğin Yaşı */
@@ -65,8 +80,8 @@ Aşağıdakileri yap:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(gecenZaman) {
+  return gecenZaman * 7;
 }
 
 /* Görev 3 */
@@ -84,7 +99,13 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 */
 
 function oyun(oyuncu, bilgisayar) {
-  /*buraya kodunu yazabilirsin*/
+  if (oyuncu === bilgisayar) {
+    return "Beraberlik";
+  } else if(oyuncu === "Taş" && bilgisayar === "Makas" || oyuncu === "Makas" && bilgisayar === "Kağıt" || oyuncu === "Kağıt" && bilgisayar === "Taş") {
+    return "Kazandın!";
+  } else {
+    return "Kaybettin!";
+  }
 }
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
@@ -102,6 +123,19 @@ function oyun(oyuncu, bilgisayar) {
 Şimdi kendi seçtiğin bir seçime karşı bilgisayarın rastgele oluşturduğu seçimi yukarıda yazdığın oyun fonsiyonu ile oynayın ve sonucu console'a yazdırın.
 Örn: console.log(oyun("Makas",bilgisayarinSecimi()))
 */
+
+function bilgisayarinSecimi(){
+  const seed = Math.floor(Math.random() * 3);
+  if (seed = 0){
+    return "Taş";
+  } else if (seed = 1){
+    return "Kağıt";
+  } else {
+    return "Makas";
+  }
+}
+
+console.log(oyun("Makas", bilgisayarinSecimi()));
 
 /* Görev 4 : Metrik Dönüştürücü */
 
